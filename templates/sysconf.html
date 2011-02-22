@@ -1,23 +1,22 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 
-<table>
-  <tr>
-    <th>Product</th>
-    <th>Location</th>
-    <th>OS</th>
-    <th>Gen</th>
-    <th>Capacity</th>
-  </tr>
-  <tr>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-  </tr>
-</table>
+<center>
+  <table>
+    <tr>
+      {% for col in head %}
+        <th>{{ col }}</th>
+      {% endfor %}
+    </tr>
+    {% for product in products %}
+      <tr>
+        {% for col in product %}
+          <td>{{ col }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+</center>
 
 {% endblock content %}

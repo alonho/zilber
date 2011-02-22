@@ -1,6 +1,7 @@
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <html>
   <head>
+    <title>The Zilbereich</title>
     <style>
       body {
         background-image: url("/static/zz_banner.png");       
@@ -10,10 +11,6 @@
         background-color: #222222;
       }
       
-      div#banner {
-       
-      }
-
       div#banner img {
         display: inline-block;
         align: top;
@@ -21,21 +18,14 @@
 
       div#content {
         width: 65%;
-        margin-top: 4%;
-        margin-left: 4%;
-        margin-bottom: 4%;
-        padding: 4%;
-      }
 
-      hr {
-        height: 4px;
-        color: #8B3E2F;
-        background-color: #8B3E2F;
+        padding: 4%;
       }
 
       h2 {
         font-family: times, Times New Roman, times-roman, georgia, serif;
         margin: 0;
+        color: white;
         text-align:center;
         padding: 15px 15px 15px 15px;
         font-size: 35px;
@@ -56,19 +46,21 @@
         margin: 25px auto;
         text-transform: lowercase;
         line-height: 105%;
-        font-size: 13pt;
+        font-size: 16pt;
         font-variant: small-caps;
+        color: silver;
       }
 
       
 table {
 	font-family: Tahoma, Verdana, Arial;
         border: 2px solid black;
+        
 
 }
 
 tbody td{
-	font-size: 10px;
+	font-size: 14px;
 	background: #2d3134;
 	color: #fff;
 	border: 1px solid #373B3E;
@@ -181,11 +173,14 @@ table caption{
         <img width="10%" src="/static/zz_coat_of_arms.png"/>
       </div>
       
+      <div id="content">
+	{% block content %}
+	{% endblock %}
+      </div>
+    
+      <a href="/">
+	<img src="/static/iphone_home.png" width="5%" border="0">
+      </a>
     </center>
-
-    <div id="content">
-      {% block content %}
-      {% endblock %}
-    </div>
   </body>
 </html>

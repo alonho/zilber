@@ -85,6 +85,7 @@ STATIC_ROOT = IN_DIR('static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     IN_DIR('pics'),
+    IN_DIR('js')
 )
 
 TEMPLATE_DIRS = (
