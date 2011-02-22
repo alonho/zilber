@@ -6,9 +6,9 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
                        (r'^$', 'views.index'),
-                       (r'^main$', 'views.quotes'),
                        (r'^testra/?$', 'views.testra'),
                        (r'^sysconf/?$', 'views.sysconf'),
+                       (r'^quotes/?$', 'views.quotes'),
     # Example:
     # (r'^zilber/', include('zilber.foo.urls')),
 

@@ -1,44 +1,5 @@
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+{% extends "base.html" %}
 
-<html>
-  <head>
-    <script type="text/javascript" src="/static/jquery-1.4.4.js"></script>
-    <script type="text/javascript" src="/static/longclick.js"></script>
-    <style>
-      body {
-        background-image: url("/static/zz_banner.png");       
-        background-position: bottom right;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-color: #222222;
-      }
-      
-      div#content {
-        margin-top: 5%;
-      }
-    </style>
-    <title>The Zilbereich</title>
-  </head>
-
-  <body>
-    </br>
-    </br>
-    <div id="content" align="center">
-      <img src="/static/zz_coat_of_arms.png" width="20%" border="0">
-      </br>
-      </br>
-      </br>
-      </br>
-      
-      <div id="menu">
-	<p> bla</p>
-      </div>
-
-
-      <a href="/main" class="longclick" onclick="location.href='/main'">
-	<img src="/static/iphone_home.png" width="5%" border="0">
-      </a>
-    </div>
-  </body>
-
-</html>
+{% block content %}
+  <img src="/static/zz_coat_of_arms.png" width="33%" border="0">
+{% endblock%}

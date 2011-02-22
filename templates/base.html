@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>The Zilbereich</title>
+    <script type="text/javascript" src="/static/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="/static/longclick.js"></script>
     <style>
       body {
         background-image: url("/static/zz_banner.png");       
@@ -52,100 +54,109 @@
       }
 
       
-table {
+      table {
 	font-family: Tahoma, Verdana, Arial;
         border: 2px solid black;
-        
+      }
 
-}
-
-tbody td{
+      tbody td{
 	font-size: 14px;
 	background: #2d3134;
 	color: #fff;
 	border: 1px solid #373B3E;
 	padding-left: 3px;
 	height: 40px;
-}
-tbody td a:link{
+      }
+
+      tbody td a:link{
 	font-size: 12px;
-	color:#FF6600;
+	color:red;
 	font-weight: bold;
 	text-decoration: none;
-}
+      }
 
-tbody td a:hover{
+      tbody td a:hover{
 	font-size: 12px;
 	color:#FF6600;
 	font-weight: bold;
-	text-decoration: underline;
-}
+        text-decoration: underline;
+      }
 
-tbody td a:visited{
+      tbody td a:visited{
 	font-size: 12px;
-	color:#FF6600;
+	color: red;
 	font-weight: bold;
-	text-decoration: line-through;
-}
-tbody th{
+      }
+      
+      tbody th{
 	background: silver;
 	color: black;
 	text-align: left;
 	padding-left: 4px;
 	border: 1px solid #2d3134;
 	width: 120px;
-}
-tbody th a:link{
+      }
+      
+      tbody th a:link{
 	color: #fff;
 	font-size: 12px;
 	font-weight: bolder;
 	text-decoration: none;
-}
-tbody th a:hover{
+      }
+      
+      tbody th a:hover{
 	font-size: 13px;
 	color: #fff;
 	font-weight: bolder;
 
-}
-tbody th a:visited{
+      }
+
+      tbody th a:visited{
 	text-decoration: line-through;
 	font-size: 12px;
 	color: #fff;
 	font-weight: bolder;
 
-}
-tbody tr:hover{
+      }
+      
+      tbody tr:hover{
 	background: #333;
-}
-tbody a[title^="Download"] { 
+      }
+
+      tbody a[title^="Download"] { 
 	/*background: url('http://www.fitodotnet.com/csstablegallery/icon_attachment.gif') no-repeat center;
 	padding-top: 22px;*/
 	font-size: 12px;
 	color:#FF6600;
 	text-align: center;
-}
-tbody a[title^="Download"]:hover{
+      }
+      
+      tbody a[title^="Download"]:hover{
 	text-decoration: underline;
 	font-size: 12px;
 	color:#FF6600;
-}
-tbody a[title^="Download"]:visited{
-	text-decoration: line-through;
+
+      }
+      tbody a[title^="Download"]:visited{
+        text-decoration: line-through;
 	font-size: 12px;
 	color:#FF6600;
-}
-tfoot{
+      }
+
+      tfoot{
 	background: #1F2A34;
 	color: #fff;
 	font-size: 18px;
 	text-align: center;
 	border-left: 1px solid #1F2A34;
 	border-right: 1px solid #1F2A34;
-}
-tfoot td{
+      }
+
+      tfoot td{
 	font-style:italic;
-}
-table caption{
+      }
+      
+      table caption{
 	background: #1F2A34;
 	color: #fff;
 	text-align: center;
@@ -154,7 +165,7 @@ table caption{
 	padding-bottom: 10px;
 	border-left: 1px solid #1F2A34;
 	border-right: 1px solid #1F2A34;
-}
+      }
 
 
       
@@ -167,20 +178,34 @@ table caption{
   <body>
     
     <center>
-      
-      <div id="banner">
-        <img width="50%" src="/static/zz_banner_text.png"/>
-        <img width="10%" src="/static/zz_coat_of_arms.png"/>
-      </div>
+      {% block header %}
+      {% endblock %}
       
       <div id="content">
 	{% block content %}
 	{% endblock %}
       </div>
-    
-      <a href="/">
-	<img src="/static/iphone_home.png" width="5%" border="0">
-      </a>
+
+
+      
+      <img id="area" src="/static/iphone_home.png" width="5%" border="0">
+      </br>
+      <div id="menu" style="display: none">
+	<table>
+	  <tr>
+	    <td><a href='/sysconf'>Sysconf</a></td>
+	    <td><a href='/testra'>Testra</a></td>
+	    <td><a href='/quotes'>Quotes</a></td>
+	  </tr>
+	</table>
+      </div>
+
+      <script type='text/javascript'>
+	$('#area').click(400, function(){ $(this).toggleClass('clicked'); $('#menu').show('slow');})
+	$('#area').click(function(){ $(this).toggleClass('clicked'); location.href = '/';})
+      </script>
+      
+
     </center>
   </body>
 </html>
