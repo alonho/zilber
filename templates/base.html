@@ -1,0 +1,84 @@
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("/static/zz_banner.png");       
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #222222;
+      }
+      
+      div#banner {
+       
+      }
+
+      div#banner img {
+        display: inline-block;
+        align: top;
+      }
+
+      div#content {
+        width: 65%;
+        margin-top: 4%;
+        margin-left: 4%;
+        margin-bottom: 4%;
+        padding: 4%;
+      }
+
+      hr {
+        height: 4px;
+        color: #8B3E2F;
+        background-color: #8B3E2F;
+      }
+
+      h2 {
+        font-family: times, Times New Roman, times-roman, georgia, serif;
+        margin: 0;
+        text-align:center;
+        padding: 15px 15px 15px 15px;
+        font-size: 35px;
+        line-height: 24px;
+        font-weight: bold;
+      }
+
+      p.heb { 
+        direction: rtl;
+        font-family:"Times New Roman", Times, serif;;
+        font-size: 14pt;
+      }
+
+      p {
+        font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+        letter-spacing:0.1em;
+        text-align:center;
+        margin: 25px auto;
+        text-transform: lowercase;
+        line-height: 105%;
+        font-size: 13pt;
+        font-variant: small-caps;
+      }
+      {% block style %}
+      
+      {% endblock style %}
+    </style>
+  </head>
+
+  <body>
+    
+    <center>
+      
+      <div id="banner">
+        <img width="50%" src="/static/zz_banner_text.png"/>
+        <img width="10%" src="/static/zz_coat_of_arms.png"/>
+      </div>
+      
+    </center>
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
