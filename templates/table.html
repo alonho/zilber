@@ -1,0 +1,17 @@
+
+<center>
+  <table>
+    <tr>
+      {% for col in head %}
+        <th>{{ col }}</th>
+      {% endfor %}
+    </tr>
+    {% for item in items %}
+      <tr>
+        {% for col in item %}
+          <td>{{ col }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+</center>

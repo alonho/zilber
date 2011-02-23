@@ -1,5 +1,5 @@
 from jinjango import render_to_response
-
+import time
 
 
 def _generic_handler(template_name):
@@ -27,12 +27,13 @@ def testra(request):
     SUCCESS = '<font color="green">Success</font>'
     FAILURE =  '<font color="red">Failure</font>'
     head = ("Invocation", "Date", "Result")
-    items = (("fiber switch automation", "", SUCCESS),
-             ("migration to power 9", "", SUCCESS),
-             ("take over IT", "", SUCCESS),
-             ("replace sysaid with jira", "", SUCCESS),
-             ("secretary in the 37th floor", "", SUCCESS),
-             ("wifi in toilets", "", FAILURE))
+    DATE = lambda t: time.strftime("%Y.%m.%d %H:%M:%S", time.localtime(t))
+    items = (("fiber switch automation", DATE(1263822195), SUCCESS),
+             ("migration to power 9", DATE(1264822195), SUCCESS),
+             ("take over IT", DATE(1266822195), SUCCESS),
+             ("replace sysaid with jira", DATE(1278253354), SUCCESS),
+             ("secretary in the 37th floor", DATE(1289301237), SUCCESS),
+             ("wifi in toilets", DATE(1294967656), FAILURE))
     return render_to_response("testra.html", context=dict(head=head, items=items))
 
 
