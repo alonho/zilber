@@ -3,6 +3,7 @@
   <head>
     <title>The Zilbereich</title>
     <script type="text/javascript" src="/static/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="/static/jquery.tools.min.js"></script>
     <script type="text/javascript" src="/static/single_double_click.js"></script>
 
     <style>
@@ -17,15 +18,34 @@
       div#iphone {
         margin: 10px 10px 10px 10px;
       }
-      
-      div#menu th {
-        color: red;
-        padding: 1px;
-        text-align: center;
-        width: 80px;
-        font-size: 18px;        
-        padding: 10px 10px 10px 10px;
+
+      #menu {
+        padding-top: 40px;
+        width: 400px;
+        height: 116px;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background:url(static/black_arrow.png) no-repeat 0 0;
       }
+
+      #menu a, a:visited, a:hover {
+        color: black;
+        text-decoration: none;
+      }
+      
+      #menu div.button {
+        width: 95px;
+        display: inline-block;
+        padding: 3px;
+        margin: 3px;
+        font-size: 25px;
+        background: silver;
+        color: black;
+        border: 2px solid black;
+      }
+
       
       div#banner img {
         display: inline-block;
@@ -194,26 +214,31 @@
 	{% endblock %}
       </div>
 
-      <div id="menu" style="visibility:hidden;">
-	<table>
-	  <tr>
-	    <th><a href='/sysconf'>Sysconf</a></th>
-	    <th><a href='/testra'>Testra</a></th>
-	    <th><a href='/quotes'>Quotes</a></th>
-	  </tr>
-	</table>
-      </div>
       
       <div id="iphone">
 	<img id="area" src="/static/iphone_home.png" width="5%" border="0">
       </div>
 
+      <div id="menu">
+        <a href='/sysconf'><div class="button">Sysconf</div></a>
+        <a href='/testra'><div class="button">Testra</div></a>
+	<a href='/quotes'><div class="button"'>Quotes</div></a>
+      </div>
+
+
       <script type='text/javascript'>
-	$('#area').single_double_click(function () {
-   	  location.href = '/';
-	}, function () {
-	  $('#menu').css({"visibility":""});
-	})
+        $(function() {
+          $('#area').single_double_click(function () {
+                location.href = '/';
+          },
+          function() {
+                our_position = $(this).offset();
+                $("#menu").css("top", our_position.top - $("#menu").height() - 10);
+                $("#menu").css("left", our_position.left + ($(this).width() / 2) - ($("#menu").width() / 2));
+                
+                $("#menu").toggle();
+          });
+        })
       </script>
 
     </center>
