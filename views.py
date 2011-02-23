@@ -12,14 +12,15 @@ quotes = _generic_handler("quotes.html")
 
 def sysconf(request):
     head = ("Product", "Location", "OS", "Gen", "Capacity")
-    items = (("iphone", "mobile", "iOS 4.1", "3gs", "8 GiB"),
-             ("ipad", "mobile", "iOS 4.2", "1", "16 GiB"),
-             ("mac book pro", "mobile", "OS X 10.6", "", "500 GiB"),
-             ("mac mini", "home", "OS X 10.6", "", "320 GiB"),
-             ("mac mini", "home", "OS x 10.6", "", "500 GiB"),
-             ("apple tv", "home", "ubuntu 10.10", "", ""),
-             ("airport extreme", "home", "", "", ""),
-             ("media center", "home", "Windows 7", "", "1 TiB"))
+    items = (("iPhone", "mobile", "iOS 4.2.1", "3gs", "8 GiB"),
+             ("iPad", "next to bed", "iOS 4.2.1", "1", "16 GiB"),
+             ("MacBook pro", "shlomi penner", "OS X 10.6", "7", "500 GiB"),
+             ("MacBook air", "(future option)", "OS X 10.6", "2", "200 GiB"),
+             ("Mac Mini", "home", "OS X 10.6", "", "320 GiB"),
+             ("Mac Mini", "home", "OS x 10.6", "", "500 GiB"),
+             ("Apple TV", "home", "ubuntu 10.10", "3", ""),
+             ("Apple Time Capsule", "home", "", "2", "1 TiB"),
+             ("Media Center", "home", "Windows 7", "", "1 TiB"))
 
     return render_to_response("sysconf.html", context=locals())
 
