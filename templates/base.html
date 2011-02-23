@@ -12,6 +12,19 @@
         background-attachment: fixed;
         background-color: #222222;
       }
+
+      div#iphone {
+        margin: 10px 10px 10px 10px;
+      }
+      
+      div#menu th {
+        color: red;
+        padding: 1px;
+        text-align: center;
+        width: 80px;
+        font-size: 18px;        
+        padding: 10px 10px 10px 10px;
+      }
       
       div#banner img {
         display: inline-block;
@@ -52,7 +65,6 @@
         font-variant: small-caps;
         color: silver;
       }
-
       
       table {
 	font-family: Tahoma, Verdana, Arial;
@@ -61,6 +73,7 @@
 
       tbody td{
 	font-size: 14px;
+        width: 20%;
 	background: #2d3134;
 	color: #fff;
 	border: 1px solid #373B3E;
@@ -98,25 +111,21 @@
       }
       
       tbody th a:link{
-	color: #fff;
-	font-size: 12px;
+	color: black;
+	font-size: 15px;
 	font-weight: bolder;
 	text-decoration: none;
       }
       
       tbody th a:hover{
-	font-size: 13px;
-	color: #fff;
+	font-size: 15px;
+	color: red;
 	font-weight: bolder;
-
       }
-
+      
       tbody th a:visited{
-	text-decoration: line-through;
-	font-size: 12px;
-	color: #fff;
+	font-size: 15px;
 	font-weight: bolder;
-
       }
       
       tbody tr:hover{
@@ -131,6 +140,10 @@
 	text-align: center;
       }
       
+      tbody td[title^="Success"] {
+        color: green;
+      }
+
       tbody a[title^="Download"]:hover{
 	text-decoration: underline;
 	font-size: 12px;
@@ -186,22 +199,22 @@
 	{% endblock %}
       </div>
 
-
-      
-      <img id="area" src="/static/iphone_home.png" width="5%" border="0">
-      </br>
-      <div id="menu" style="display: none">
+      <div id="menu" style="visibility:hidden;">
 	<table>
 	  <tr>
-	    <td><a href='/sysconf'>Sysconf</a></td>
-	    <td><a href='/testra'>Testra</a></td>
-	    <td><a href='/quotes'>Quotes</a></td>
+	    <th><a href='/sysconf'>Sysconf</a></th>
+	    <th><a href='/testra'>Testra</a></th>
+	    <th><a href='/quotes'>Quotes</a></th>
 	  </tr>
 	</table>
       </div>
+      
+      <div id="iphone">
+	<img id="area" src="/static/iphone_home.png" width="5%" border="0">
+      </div>
 
       <script type='text/javascript'>
-	$('#area').click(400, function(){ $(this).toggleClass('clicked'); $('#menu').show('slow');})
+	$('#area').click(400, function(){ $(this).toggleClass('clicked'); $('#menu').css({"visibility":""});})
 	$('#area').click(function(){ $(this).toggleClass('clicked'); location.href = '/';})
       </script>
       

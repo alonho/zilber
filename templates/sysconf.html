@@ -2,21 +2,6 @@
 
 {% block content %}
 
-<center>
-  <table>
-    <tr>
-      {% for col in head %}
-        <th>{{ col }}</th>
-      {% endfor %}
-    </tr>
-    {% for product in products %}
-      <tr>
-        {% for col in product %}
-          <td>{{ col }}</td>
-        {% endfor %}
-      </tr>
-    {% endfor %}
-  </table>
-</center>
+{% include 'table.html'%}
 
 {% endblock content %}
