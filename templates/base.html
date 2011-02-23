@@ -3,7 +3,7 @@
   <head>
     <title>The Zilbereich</title>
     <script type="text/javascript" src="/static/jquery-1.4.4.js"></script>
-    <script type="text/javascript" src="/static/longclick.js"></script>
+    <script type="text/javascript" src="/static/single_double_click.js"></script>
 
     <style>
       body {
@@ -177,8 +177,6 @@
 	border-right: 1px solid #1F2A34;
       }
 
-
-      
       {% block style %}
       
       {% endblock style %}
@@ -211,10 +209,12 @@
       </div>
 
       <script type='text/javascript'>
-	$('#area').click(400, function(){ $(this).toggleClass('clicked'); $('#menu').css({"visibility":""});})
-	$('#area').click(function(){ $(this).toggleClass('clicked'); location.href = '/';})
+	$('#area').single_double_click(function () {
+   	  location.href = '/';
+	}, function () {
+	  $('#menu').css({"visibility":""});
+	})
       </script>
-      
 
     </center>
   </body>
