@@ -197,6 +197,12 @@
 	border-right: 1px solid #1F2A34;
       }
 
+      #like {
+        position: fixed;
+        left: 2%;
+        top: 95%;
+      }
+
       {% block style %}
       
       {% endblock style %}
@@ -225,6 +231,9 @@
 	<a href='/quotes'><div class="button"'>Quotes</div></a>
       </div>
 
+      <div id="like">
+        <iframe src="http://www.facebook.com/plugins/like.php?href=www.zilbereich.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=dark&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+      </div>
 
       <script type='text/javascript'>
         $(function() {
